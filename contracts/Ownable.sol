@@ -8,7 +8,9 @@ error run_renounceOwnership_instead();
 contract Ownable {
     address public owner;
 
-    constructor() {}
+    constructor() {
+        owner = msg.sender;
+    }
 
     modifier onlyOwner() {
         checkOwner();
